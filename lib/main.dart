@@ -14,7 +14,9 @@ class Planta extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouters.routers,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: Colors.black),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+      ),
     );
   }
 }
