@@ -21,7 +21,7 @@ class PageViewItem extends StatelessWidget {
         children: [
           Image.asset(img),
           const SizedBox(
-            height: 15,
+            height: 30,
           ),
           Text(
             title,
@@ -30,7 +30,7 @@ class PageViewItem extends StatelessWidget {
             style: Styles.textStyle30,
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           Opacity(
             opacity: .5,

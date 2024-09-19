@@ -1,16 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:planta/Core/Utilis/AssetData.dart';
-import 'package:planta/Features/Splash/Peresentation/Views/Widgets/Page_View_Item.dart';
+import 'package:planta/Features/Splash/Peresentation/Views/Widgets/PageView.dart';
+import 'package:planta/Features/Splash/Peresentation/Views/Widgets/SplashButton.dart';
 
-class SplashBody extends StatelessWidget {
+import 'Indicator.dart';
+
+class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
 
   @override
+  State<SplashBody> createState() => _SplashBodyState();
+}
+
+late PageController _controller;
+int currentPage = 0;
+
+class _SplashBodyState extends State<SplashBody> {
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const PageViewItem(
-      img: AssetData.img1,
-      title: 'Learn more about plants',
-      supTitle: 'Read how to care for plants in our rich plants guide ',
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        CustompageView(
+          pageController: _controller,
+          onPageChanged: (index) {
+            setState(() {
+              currentPage = index;
+            });
+          },
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Indicator(
+              controller: _controller,
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            SplashButton(currentPage: currentPage, controller: _controller)
+          ],
+        ),
+      ],
     );
   }
 }

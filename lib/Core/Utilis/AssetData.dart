@@ -1,3 +1,7 @@
 abstract class AssetData {
-  static const img1 = "assets/images/2.png";
+  static const SpalshImg = [
+    "assets/images/2.png",
+    "assets/images/3.png",
+    "assets/images/4.png",
+  ];
 }
