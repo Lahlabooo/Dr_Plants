@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class BacckgroundApp extends StatelessWidget {
-  const BacckgroundApp({super.key, required this.bodyWidgt});
-  final Widget bodyWidgt;
+class BackgroundApp extends StatelessWidget {
+  const BackgroundApp({super.key, required this.bodyWidget});
+  final Widget bodyWidget;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -53,16 +53,17 @@ class BacckgroundApp extends StatelessWidget {
             ),
           ],
         ),
-        Positioned.fill(
+        Positioned(
           child: BackdropFilter(
             filter: ImageFilter.blur(
-              sigmaX: 60,
-              sigmaY: 40,
+              sigmaX: 110,
+              sigmaY: 90,
+              // tileMode: TileMode.clamp,
             ),
             child: const SizedBox(),
           ),
         ),
-        bodyWidgt,
+        bodyWidget,
       ],
     );
   }

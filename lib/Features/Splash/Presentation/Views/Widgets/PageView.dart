@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:planta/Core/Utilis/AssetData.dart';
+import 'package:planta/Core/Utils/AssetData.dart';
 import 'package:planta/Features/Splash/Data/SpalshData.dart';
-import 'package:planta/Features/Splash/Peresentation/Views/Widgets/Page_View_Item.dart';
+import 'package:planta/Features/Splash/Presentation/Views/Widgets/Page_View_Item.dart';
 
 class CustompageView extends StatelessWidget {
   const CustompageView(

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
-import 'package:planta/Core/Utilis/Styles.dart';
+import 'package:planta/Core/Utils/Styles.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem(
@@ -33,7 +33,7 @@ class PageViewItem extends StatelessWidget {
             height: 20,
           ),
           Opacity(
-            opacity: .5,
+            opacity: .3,
             child: Text(
                 textAlign: TextAlign.center,
                 supTitle,

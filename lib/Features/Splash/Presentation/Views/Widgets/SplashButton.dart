@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:planta/Core/Utilis/Styles.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../Core/Utils/App_Routers.dart';
+import '../../../../../Core/Utils/Styles.dart';
 
 class SplashButton extends StatelessWidget {
   const SplashButton(
@@ -33,7 +35,7 @@ class SplashButton extends StatelessWidget {
 
   void pageViewNavigation(BuildContext context) {
     if (currentPage == 2) {
-      //GoRouter.of(context).push(AppRouters.kLoginPage);
+      GoRouter.of(context).push(AppRouters.kLoginPage);
     } else {
       controller.nextPage(
           duration: const Duration(milliseconds: 100), curve: Curves.linear);

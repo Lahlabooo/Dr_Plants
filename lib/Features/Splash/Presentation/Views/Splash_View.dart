@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:planta/Core/Widgets/Background_App.dart';
 
 import 'Widgets/Splash_Body.dart';
-//import 'package:planta/Features/Splash/Peresentation/Views/Widgets/Splash_Body.dart';
+//import 'package:planta/Features/Splash/Presentation/Views/Widgets/Splash_Body.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -10,8 +10,8 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: BacckgroundApp(
-        bodyWidgt: SplashBody(),
+      body: BackgroundApp(
+        bodyWidget: SplashBody(),
       ),
     );
   }

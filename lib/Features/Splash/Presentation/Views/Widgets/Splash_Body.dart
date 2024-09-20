@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:planta/Features/Splash/Peresentation/Views/Widgets/PageView.dart';
-import 'package:planta/Features/Splash/Peresentation/Views/Widgets/SplashButton.dart';
+import 'package:planta/Features/Splash/Presentation/Views/Widgets/PageView.dart';
+import 'package:planta/Features/Splash/Presentation/Views/Widgets/SplashButton.dart';
 
 import 'Indicator.dart';
 
