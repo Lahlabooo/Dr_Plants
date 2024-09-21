@@ -15,15 +15,15 @@ class CustompageView extends StatelessWidget {
       onPageChanged: onPageChanged,
       children: [
         PageViewItem(
-            img: AssetData.SpalshImg[0],
+            img: AssetData.splashImg[0],
             title: SplashData.titleOne,
             supTitle: SplashData.descriptionOne),
         PageViewItem(
-            img: AssetData.SpalshImg[1],
+            img: AssetData.splashImg[1],
             title: SplashData.titleTwo,
             supTitle: SplashData.descriptionTwo),
         PageViewItem(
-            img: AssetData.SpalshImg[2],
+            img: AssetData.splashImg[2],
             title: SplashData.titleThree,
             supTitle: SplashData.descriptionThree),
       ],

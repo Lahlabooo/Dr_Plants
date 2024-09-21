@@ -42,7 +42,7 @@ class AppNavigationBar extends StatelessWidget {
           selectedIndex: currentIndex,
           onDestinationSelected:onDestinationSelected,
           indicatorColor: Colors.white.withOpacity(0),
-          height: 70,
+          height: 60,
         ),
       ),
     );
