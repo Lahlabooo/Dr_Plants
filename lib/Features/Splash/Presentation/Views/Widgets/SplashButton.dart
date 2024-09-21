@@ -35,7 +35,7 @@ class SplashButton extends StatelessWidget {
 
   void pageViewNavigation(BuildContext context) {
     if (currentPage == 2) {
-      GoRouter.of(context).push(AppRouters.kLoginPage);
+      GoRouter.of(context).push(AppRouters.kHomeLayout);
     } else {
       controller.nextPage(
           duration: const Duration(milliseconds: 100), curve: Curves.linear);
