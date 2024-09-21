@@ -25,15 +25,20 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: AppNavigationBar(
-        currentIndex: selectedIndex,
-        onDestinationSelected: (index){
-          selectedIndex = index ;
-          setState(() {
-          });
-        },
-      ),
-      body: BackgroundApp(bodyWidget: HomeLayoutBody(widgetBody: homeLayoutBodyWidgets[selectedIndex],),)
+      body: BackgroundApp(
+        bodyWidget: HomeLayoutBody(
+          widgetBody: homeLayoutBodyWidgets[selectedIndex],
+
+        ),
+        navWidget:AppNavigationBar(
+      currentIndex: selectedIndex,
+      onTap: (index){
+        selectedIndex = index ;
+        setState(() {
+        });
+      },
+    ),
+      )
     );
   }
 }

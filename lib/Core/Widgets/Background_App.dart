@@ -3,11 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class BackgroundApp extends StatelessWidget {
-  const BackgroundApp({super.key, required this.bodyWidget});
+  const BackgroundApp({super.key, required this.bodyWidget , this.navWidget});
   final Widget bodyWidget;
+  final Widget? navWidget ;
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
         Column(
           children: [
@@ -64,6 +66,7 @@ class BackgroundApp extends StatelessWidget {
           ),
         ),
         bodyWidget,
+        navWidget??const SizedBox(),
       ],
     );
   }

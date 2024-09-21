@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:planta/Core/Widgets/GlassBox.dart';
 
 class AppNavigationBar extends StatelessWidget {
-  const AppNavigationBar({super.key, required this.currentIndex, this.onDestinationSelected});
+  const AppNavigationBar({super.key, required this.currentIndex, this.onTap});
   final int currentIndex ;
-  final void Function(int)? onDestinationSelected ;
+  final void Function(int)? onTap ;
 
 
   @override
@@ -16,33 +17,46 @@ class AppNavigationBar extends StatelessWidget {
         left: 10,
         right: 10,
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(25),
-        child: NavigationBar(
-          destinations: const [
-            NavigationDestination( icon:FaIcon(FontAwesomeIcons.seedling,
-              size: 30,
+      child: GlassBox(
+        color: Colors.lightGreenAccent.withOpacity(.8),
+        borderRadius: 25,
+        x: 10,
+        y: 10,
+        widget: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem( icon:FaIcon(FontAwesomeIcons.seedling,
+              //size: 30,
               color: Colors.black,
             ),
                 label: ""),
-            NavigationDestination( icon:   FaIcon(FontAwesomeIcons.camera ,
-              size: 30,
+            BottomNavigationBarItem( icon:   FaIcon(FontAwesomeIcons.camera ,
+             // size: 30,
               color: Colors.black,
             ),
                 label: ""),
-            NavigationDestination( icon:Icon(FontAwesomeIcons.wandMagicSparkles,
-              size: 30,
+            BottomNavigationBarItem( icon:Icon(FontAwesomeIcons.wandMagicSparkles,
+              //size: 30,
               color: Colors.black,
             ),
               label: "",),
           ],
-          backgroundColor:  Colors.lightGreenAccent.withOpacity(.9),
-          animationDuration: const Duration(seconds: 1),
-          labelBehavior:  NavigationDestinationLabelBehavior.onlyShowSelected,
-          selectedIndex: currentIndex,
-          onDestinationSelected:onDestinationSelected,
-          indicatorColor: Colors.white.withOpacity(0),
-          height: 60,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          fixedColor: Colors.black,
+          unselectedIconTheme: const IconThemeData(
+            size: 23,
+          ),
+          selectedIconTheme: const IconThemeData(
+            size: 30,
+          ),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          landscapeLayout:
+          BottomNavigationBarLandscapeLayout.spread,
+          unselectedItemColor: Colors.black.withOpacity(.8),
+          type: BottomNavigationBarType.fixed,
+          currentIndex: currentIndex,
+          onTap: onTap,
         ),
       ),
     );

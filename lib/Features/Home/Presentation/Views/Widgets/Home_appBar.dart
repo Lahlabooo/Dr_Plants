@@ -6,12 +6,13 @@ class HomeAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text('Dr Plants', style: Styles.textStyle30,),
-      elevation: 0.0,
-      backgroundColor: Colors.transparent,
-      automaticallyImplyLeading: false,
+    return const Padding(
+      padding:  EdgeInsets.only(top: 50.0),
+      child:  Row(
+       children:[   Text('Dr Plants', style: Styles.textStyle30,),
+       ]
 
+      ),
     );
   }
 }
