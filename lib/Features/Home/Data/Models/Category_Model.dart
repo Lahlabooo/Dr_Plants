@@ -59,7 +59,6 @@ class CategoryModel {
 
     for (var item in _categoryDataMap) {
       data.add(CategoryModel.fromJson(item));
-      print(item);
     }
     return data;
   }

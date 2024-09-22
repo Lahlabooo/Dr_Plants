@@ -1,14 +1,10 @@
-import 'package:flutter/cupertino.dart';
-
-import '../../../../Core/Utils/Styles.dart';
-
-class CameraPage extends StatelessWidget {
-  const CameraPage({super.key});
+import 'package:flutter/material.dart';
+import 'package:planta/Features/Scan/Presentation/Views/Widgets/Scan_Body.dart';
+class ScanPage extends StatelessWidget {
+  const ScanPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("CameraPage",style: Styles.textStyle30,),
-    );
+    return const ScanBody();
   }
 }

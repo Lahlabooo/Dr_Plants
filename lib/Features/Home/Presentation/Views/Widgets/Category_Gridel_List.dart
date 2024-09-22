@@ -8,7 +8,7 @@ class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   SizedBox(
-      height: MediaQuery.of(context).size.height *.4,
+      height: MediaQuery.of(context).size.height *.5,
       child: GridView.builder(
         gridDelegate:
         const SliverGridDelegateWithFixedCrossAxisCount(

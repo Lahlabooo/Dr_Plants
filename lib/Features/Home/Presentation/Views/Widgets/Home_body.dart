@@ -28,7 +28,7 @@ class HomeBody extends StatelessWidget {
               color: Colors.white,
               thickness: .3 ,),
              SizedBox(height: 15,),
-             Text("Category.. ",style: Styles.textStyle30,),
+             Text(" Category",style: Styles.textStyle30,),
             SizedBox(height: 10,),
             CategoryList(),
 
