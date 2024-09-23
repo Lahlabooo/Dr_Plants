@@ -15,6 +15,7 @@ class HomeCarouselSlider extends StatelessWidget {
         CarouselSliderItem(img: AssetData.carouselSliderImg[0],),
         CarouselSliderItem(img: AssetData.carouselSliderImg[1],),
         CarouselSliderItem(img: AssetData.carouselSliderImg[2],),
+        CarouselSliderItem(img: AssetData.carouselSliderImg[3],),
       ],
       options: CarouselOptions(
         autoPlay: true,

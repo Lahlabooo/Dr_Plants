@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planta/Core/Utils/Styles.dart';
 
 class HomeAppbar extends StatelessWidget {
@@ -6,10 +7,19 @@ class HomeAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding:  EdgeInsets.only(top: 50.0),
+    return  Padding(
+      padding:  const EdgeInsets.only(top: 50.0),
       child:  Row(
-       children:[   Text('Dr Plants', style: Styles.textStyle30,),
+       children:[
+         const Text(
+           'Dr Plants',
+           style: Styles.textStyle30,
+         ),
+         const Spacer(),
+         IconButton(
+           onPressed: () {  },
+           icon: const FaIcon(FontAwesomeIcons.magnifyingGlass),
+         ),
        ]
 
       ),
