@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Utils/Styles.dart';
@@ -11,7 +10,7 @@ class ScanAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassBox(
       y: 100,
-      x:100 ,
+      x: 100,
       borderRadius: const BorderRadius.only(
         bottomLeft: Radius.circular(25),
         bottomRight: Radius.circular(25),
@@ -36,12 +35,10 @@ class ScanAppBar extends StatelessWidget {
               Text(
                 'You can Scan or Select Image . ',
                 style: Styles.textStyle15.copyWith(
-                  color: Colors.white.withOpacity(.8),
-                  fontWeight: FontWeight.bold
-                ),
+                    color: Colors.white.withOpacity(.8),
+                    fontWeight: FontWeight.bold),
               ),
               const Spacer(),
-
             ],
           ),
         ),
