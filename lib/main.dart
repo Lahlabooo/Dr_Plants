@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:planta/Core/Utils/App_Routers.dart';
 
+//import 'Core/Utils/ServiceLocator.dart';
+
 void main() {
   runApp(const Planta());
+  //setupServiceLocator();
 }
 
 class Planta extends StatelessWidget {

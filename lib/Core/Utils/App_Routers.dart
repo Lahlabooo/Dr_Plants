@@ -4,10 +4,7 @@ import 'package:planta/Core/Widgets/App_Layout.dart';
 import 'package:planta/Core/Widgets/Background_App.dart';
 import 'package:planta/Features/Chat/Presentation/Views/Chat_Page.dart';
 import 'package:planta/Features/Splash/Presentation/Views/Splash_View.dart';
-
 import '../../Features/Scan/Presentation/Views/Scan_Page.dart';
-
-
 
 abstract class AppRouters {
   static const kHomeLayout = '/HomeLayout';
@@ -20,29 +17,24 @@ abstract class AppRouters {
     ),
     GoRoute(
       path: kHomeLayout,
-      builder:  (context, state) => const AppLayout(),
+      builder: (context, state) => const AppLayout(),
     ),
     GoRoute(
-        path: kScanPage,
-        builder: (context,state) {
+      path: kScanPage,
+      builder: (context, state) {
+        return const Scaffold(
+          body: BackgroundApp(bodyWidget: ScanPage()),
+        );
+      },
+    ),
+    GoRoute(
+        path: kChatPage,
+        builder: (context, state) {
           return const Scaffold(
-              body:  BackgroundApp(
-                  bodyWidget: ScanPage()
-              ),
-
-          );
-        },
-    ),
-    GoRoute(
-       path: kChatPage,
-       builder: (context,state) {
-               return const Scaffold(
-               body:  BackgroundApp(
-                bodyWidget: ChatPage(),
+            body: BackgroundApp(
+              bodyWidget: ChatPage(),
             ),
-           );
-       }
-       ),
-               ]
-  );
+          );
+        }),
+  ]);
 }
