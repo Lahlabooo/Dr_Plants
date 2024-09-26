@@ -30,7 +30,7 @@ class ScanBody extends StatelessWidget {
           ),
           PickImageSection(),
           SizedBox(
-            height: 40,
+            height: 60,
           ),
           ImageContainer(),
         ],

@@ -4,19 +4,24 @@ import 'package:planta/Core/Utils/App_Routers.dart';
 
 import '../../../../../Core/Utils/Styles.dart';
 
-class HomeButton extends StatelessWidget {
-  const HomeButton({super.key});
-
+class AppButton extends StatelessWidget {
+  const AppButton(
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.title,
+      this.onTap});
+  final double width, height;
+  final String title;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return  Center(
+    return Center(
       child: GestureDetector(
-        onTap: (){
-          GoRouter.of(context).push(AppRouters.kScanPage);
-        },
+        onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
-              gradient:const LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
@@ -24,20 +29,15 @@ class HomeButton extends StatelessWidget {
                   Colors.green,
                 ],
               ),
-              borderRadius: BorderRadiusDirectional.circular(20.0)
-          ),
+              borderRadius: BorderRadiusDirectional.circular(20.0)),
           width: 170,
           height: 50,
-          child:  Center(
-            child:  Text(
-                "Scan Now ",
-                style:Styles.textStyle18.copyWith(color: Colors.black)
-            ),
+          child: Center(
+            child: Text(title,
+                style: Styles.textStyle18.copyWith(color: Colors.black)),
           ),
-        
         ),
       ),
     );
   }
 }
-

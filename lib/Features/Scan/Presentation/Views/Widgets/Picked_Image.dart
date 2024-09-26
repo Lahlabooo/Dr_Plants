@@ -1,6 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:planta/Core/Widgets/App_Button.dart';
+
+import 'AlertDialoge_Body.dart';
 
 class PickedImage extends StatelessWidget {
   const PickedImage({super.key, required this.path});
@@ -20,29 +22,31 @@ class PickedImage extends StatelessWidget {
         const SizedBox(
           height: 25,
         ),
-        Container(
-          decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Colors.lime,
-                  Colors.green,
-                ],
-              ),
-              borderRadius: BorderRadiusDirectional.circular(15.0)),
-          width: 130,
-          height: 40,
-          child: const Center(
-            child: InkWell(
-              child: Text(
-                "Get Result !",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
+        AppButton(
+          width: 140,
+          height: 30,
+          title: 'Get Result!',
+          onTap: () => showDialogFeature(context),
         ),
       ],
     );
   }
+}
+
+Future<T?> showDialogFeature<T>(BuildContext context) {
+  return showDialog(
+      context: context,
+      barrierColor: Colors.black.withOpacity(.4),
+      useSafeArea: true,
+      builder: (BuildContext context) {
+        return const AlertDialog(
+          insetPadding: EdgeInsets.all(10),
+          scrollable: false,
+          shadowColor: Colors.transparent,
+          content: AlertDialogeBody(),
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          contentPadding: EdgeInsets.zero,
+        );
+      });
 }
