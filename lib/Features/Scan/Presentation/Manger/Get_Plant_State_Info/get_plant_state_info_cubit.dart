@@ -9,17 +9,20 @@ part 'get_plant_state_info_state.dart';
 class GetPlantStateInfoCubit extends Cubit<GetPlantStateInfoState> {
   GetPlantStateInfoCubit(this.scanRepoImpl) : super(GetPlantStateInfoInitial());
   final ScanRepoImpl scanRepoImpl;
-  PlantStateInfoModel? plantData = PlantStateInfoModel();
+
+
   Future<void> getPlantState({required File img}) async {
-    plantData = null;
+
+    emit(GetPlantStateInfoLoading());
+
     var result = await scanRepoImpl.getPlantStateINfo(image: img);
     result.fold(
       (failure) {
         emit(GetPlantStateInfoFailure(failure.errMessage));
       },
       (data) {
-        plantData = PlantStateInfoModel.fromJson(data);
-        emit(GetPlantStateInfoSuccess());
+       var plantData = PlantStateInfoModel.fromJson(data);
+        emit(GetPlantStateInfoSuccess(plantModel: plantData));
       },
     );
   }

@@ -3,8 +3,9 @@ import 'package:planta/Core/Utils/Styles.dart';
 import 'package:planta/Core/Widgets/GlassBox.dart';
 
 class DialogeScanResultItem extends StatelessWidget {
-  const DialogeScanResultItem({super.key});
-
+  const DialogeScanResultItem(
+      {super.key, required this.txt, required this.title});
+  final String txt, title;
   @override
   Widget build(BuildContext context) {
     return GlassBox(
@@ -21,7 +22,7 @@ class DialogeScanResultItem extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "Plant",
+              title,
               style: Styles.textStyle25.copyWith(color: Colors.black),
             ),
             const SizedBox(
@@ -30,7 +31,7 @@ class DialogeScanResultItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Text(
-                "tomato",
+                txt,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle20.copyWith(

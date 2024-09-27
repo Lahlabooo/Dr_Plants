@@ -7,7 +7,11 @@ final class GetPlantStateInfoInitial extends GetPlantStateInfoState {}
 
 final class GetPlantStateInfoLoading extends GetPlantStateInfoState {}
 
-final class GetPlantStateInfoSuccess extends GetPlantStateInfoState {}
+final class GetPlantStateInfoSuccess extends GetPlantStateInfoState {
+  final PlantStateInfoModel plantModel ;
+
+  GetPlantStateInfoSuccess({required this.plantModel});
+}
 
 final class GetPlantStateInfoFailure extends GetPlantStateInfoState {
   final String errorMessage;
