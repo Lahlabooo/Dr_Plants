@@ -1,25 +1,48 @@
-import 'package:flutter/cupertino.dart';
-import 'package:planta/Features/Home/Data/Models/Category_Model.dart';
+
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:planta/Features/Home/Presentation/Views/Widgets/Category_Item.dart';
 
-class CategoryList extends StatelessWidget {
-  const CategoryList({super.key});
+
+class CategorySection extends StatelessWidget {
+  const CategorySection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return   SizedBox(
-      height: MediaQuery.of(context).size.height *.5,
-      child: GridView.builder(
-        gridDelegate:
-        const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 1.3),
-        itemBuilder: (context, index) =>  CategoryItem(catModel:
-        CategoryModel.categoryData()[index],),
-        // scrollDirection: Axis.vertical,
-
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 4,
+    return  SizedBox(
+      height: MediaQuery.of(context).size.height * .5,
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CategoryItem( title: 'vegetables',
+                iconColor: Colors.lightGreen,
+                icon: FontAwesomeIcons.pepperHot,
+                onTap: () {  },),
+              CategoryItem( title: 'Flowers',
+                iconColor: Colors.redAccent,
+                icon: FontAwesomeIcons.seedling,
+                onTap: () {  },),
+            ],
+          ),
+          const SizedBox(height: 20,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CategoryItem( title: 'Cactus',
+                iconColor: Colors.purpleAccent,
+                icon: FontAwesomeIcons.spa,
+                onTap: () {  },),
+              CategoryItem( title: 'Herbs',
+                iconColor: Colors.orangeAccent,
+                icon: FontAwesomeIcons.canadianMapleLeaf,
+                onTap: () {  },),
+            ],
+          ),
+        ],
       ),
     );
   }
 }
+
