@@ -30,7 +30,7 @@ class CategorySection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CategoryItem( title: 'Cactus',
+              CategoryItem( title: 'Cacti',
                 iconColor: Colors.purpleAccent,
                 icon: FontAwesomeIcons.spa,
                 onTap: () {  },),

@@ -1,22 +1,29 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../Core/Widgets/GlassBox_WithBorder.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.title, required this.iconColor, required this.icon, required this.onTap,});
+  const CategoryItem({
+    super.key,
+    required this.title,
+    required this.iconColor,
+    required this.icon,
+    required this.onTap,
+  });
 
-
-final String title ;
-final IconData icon ;
-final Color iconColor ;
-final void Function() onTap ;
+  final String title;
+  final IconData icon;
+  final Color iconColor;
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return   GestureDetector(
-    onTap: onTap,
+    return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push('k${title}page');
+      },
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 10.0,right: 10),
+        padding: const EdgeInsets.only(bottom: 10.0, right: 10),
         child: GlassBoxWithBorder(
           widget: SizedBox(
             height: MediaQuery.of(context).size.height * .15,
