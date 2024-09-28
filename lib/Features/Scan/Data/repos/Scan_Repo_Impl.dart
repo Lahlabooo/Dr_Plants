@@ -35,7 +35,7 @@ class ScanRepoImpl implements ScanRepo {
     } on Exception catch (e) {
       if (e is DioException) {
         return left(
-          ServicesError.fromDioExeption(e),
+          ServicesError.fromDioException(e),
         );
       }
       return left(

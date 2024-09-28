@@ -16,13 +16,13 @@ final void Function() onTap ;
     return   GestureDetector(
     onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 15.0,right: 10),
+        padding: const EdgeInsets.only(bottom: 10.0,right: 10),
         child: GlassBoxWithBorder(
           widget: SizedBox(
             height: MediaQuery.of(context).size.height * .15,
             width: MediaQuery.of(context).size.width * .4,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 15.0, top: 15),
+              padding: const EdgeInsets.only(bottom: 10.0, top: 15),
               child: Column(
                 //alignment: AlignmentDirectional.bottomCenter,
                 children: [

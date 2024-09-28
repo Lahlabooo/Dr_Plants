@@ -48,7 +48,7 @@ class HomeBody extends StatelessWidget {
               style: Styles.textStyle30,
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             const CategorySection(),
           ],
