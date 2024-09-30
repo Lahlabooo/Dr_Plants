@@ -3,8 +3,8 @@ import 'package:planta/Core/Utils/AssetData.dart';
 import 'package:planta/Features/Splash/Data/SpalshData.dart';
 import 'package:planta/Features/Splash/Presentation/Views/Widgets/Page_View_Item.dart';
 
-class CustompageView extends StatelessWidget {
-  const CustompageView(
+class CustomPageView extends StatelessWidget {
+  const CustomPageView(
       {super.key, required this.pageController, this.onPageChanged});
   final PageController pageController;
   final void Function(int)? onPageChanged;

@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:planta/Core/Widgets/App_Layout.dart';
 import 'package:planta/Core/Widgets/Background_App.dart';
+import 'package:planta/Features/Category/data/Model/Plant_item_Model.dart';
 import 'package:planta/Features/Category/presentation/views/Cacti_Page.dart';
 import 'package:planta/Features/Category/presentation/views/Flowers_Page.dart';
 import 'package:planta/Features/Category/presentation/views/Herbs_Page.dart';
+import 'package:planta/Features/Category/presentation/views/Plant_Detailed.dart';
 import 'package:planta/Features/Category/presentation/views/Vegetables_Page.dart';
 import 'package:planta/Features/Chat/Presentation/Views/Chat_Page.dart';
 import 'package:planta/Features/Scan/Presentation/Manger/Picked_Image_cubit/picked_image_cubit.dart';
@@ -20,6 +22,7 @@ abstract class AppRouters {
   static const kFlowersPage = '/FlowersPage';
   static const kCactiPage = '/CactiPage';
   static const kHerbsPage = '/HerbsPage';
+  static const kPlantDetailedPage = '/PlantDetailed';
   static final routers = GoRouter(routes: [
     GoRoute(
       path: '/',
@@ -68,6 +71,10 @@ abstract class AppRouters {
     GoRoute(
       path: kHerbsPage,
       builder: (context, state) => const HerbsPage(),
+    ),
+    GoRoute(
+      path: kPlantDetailedPage,
+      builder: (context, state) =>  PlantDetailed(plantModel: state.extra as PlantItemModel),
     ),
   ]);
 }

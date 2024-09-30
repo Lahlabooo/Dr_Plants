@@ -32,7 +32,7 @@ class _SplashBodyState extends State<SplashBody> {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        CustompageView(
+        CustomPageView(
           pageController: _controller,
           onPageChanged: (index) {
             setState(() {
