@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:planta/Features/Category/presentation/views/Widgets/plant_Detailed_Body.dart';
-
 import '../../../data/Model/Plant_item_Model.dart';
+import 'DiseaseItem.dart';
 
 class ExpansionListTile1 extends StatelessWidget {
   const ExpansionListTile1({
