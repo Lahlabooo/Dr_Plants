@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 
 abstract class Failure {
@@ -44,4 +45,5 @@ class ServicesError extends Failure {
       return ServicesError('Opps There was an Error, Please try again');
     }
   }
+
 }

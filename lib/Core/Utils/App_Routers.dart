@@ -16,10 +16,10 @@ abstract class AppRouters {
   static const kHomeLayout = '/HomeLayout';
   static const kScanPage = '/ScanPage';
   static const kChatPage = '/ChatPage';
-   static const kVegtablesPage = '/VegtablesPage';
-    static const kFlowersPage = '/FlowersPage';
-     static const kCactiPage = '/CactiPage';
-      static const kHerbsPage = '/HerbsPage';
+  static const kVegetablesPage = '/VegetablesPage';
+  static const kFlowersPage = '/FlowersPage';
+  static const kCactiPage = '/CactiPage';
+  static const kHerbsPage = '/HerbsPage';
   static final routers = GoRouter(routes: [
     GoRoute(
       path: '/',
@@ -34,7 +34,9 @@ abstract class AppRouters {
       builder: (context, state) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider(create: (context) => PickedImageCubit(),),
+            BlocProvider(
+              create: (context) => PickedImageCubit(),
+            ),
           ],
           child: const Scaffold(
             body: BackgroundApp(bodyWidget: ScanPage()),
@@ -51,8 +53,8 @@ abstract class AppRouters {
             ),
           );
         }),
-        GoRoute(
-      path: kVegtablesPage,
+    GoRoute(
+      path: kVegetablesPage,
       builder: (context, state) => const VegetablesPage(),
     ),
     GoRoute(

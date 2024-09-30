@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:planta/Features/Category/presentation/manager/cubit/fetch_plant_data_cubit.dart';
 import '../../../../../Core/Widgets/GlassBox_WithBorder.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -9,18 +11,17 @@ class CategoryItem extends StatelessWidget {
     required this.title,
     required this.iconColor,
     required this.icon,
-    required this.onTap,
   });
 
   final String title;
   final IconData icon;
   final Color iconColor;
-  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push('k${title}page');
+        GoRouter.of(context).push('/${title}page');
+        BlocProvider.of<FetchPlantDataCubit>(context).fetchData(id: title);
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10.0, right: 10),
