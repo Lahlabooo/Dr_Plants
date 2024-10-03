@@ -6,9 +6,6 @@ sealed class GetMessagesState {}
 final class GetMessagesInitial extends GetMessagesState {}
 
 final class GetMessagesSuccess extends GetMessagesState {
-  final dynamic message;
-
-  GetMessagesSuccess(this.message);
 }
 
 final class GetMessagesFailure extends GetMessagesState {

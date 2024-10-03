@@ -49,7 +49,7 @@ class PickedImage extends StatelessWidget {
         useSafeArea: true,
         builder: (BuildContext context) {
           return  AlertDialog(
-            insetPadding: const EdgeInsets.all(10),
+            insetPadding: const EdgeInsets.all(0),
             scrollable: false,
             shadowColor: Colors.transparent,
             content: GlassBoxWithBorder(
@@ -62,7 +62,7 @@ class PickedImage extends StatelessWidget {
             ),
             elevation: 0.0,
             backgroundColor: Colors.transparent,
-            contentPadding: EdgeInsets.zero,
+           // contentPadding: EdgeInsets.zero,
           );
         });
   }

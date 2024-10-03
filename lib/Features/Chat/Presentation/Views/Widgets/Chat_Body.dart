@@ -15,7 +15,7 @@ class ChatBody extends StatelessWidget {
           SizedBox(height: 20,),
           ChatAppBar(),
           SizedBox(height: 20,),
-          ChatMessageBody()
+          ChatMessageBody(),
         ],
       ),
     );

@@ -14,7 +14,7 @@ class DialogeScanResultItem extends StatelessWidget {
       y: 10,
       widget: Container(
         height: MediaQuery.of(context).size.height * .2,
-        width: MediaQuery.of(context).size.width * .28,
+        width: MediaQuery.of(context).size.width * .26,
         color: Colors.white.withOpacity(.3),
         child: Column(
           children: [
