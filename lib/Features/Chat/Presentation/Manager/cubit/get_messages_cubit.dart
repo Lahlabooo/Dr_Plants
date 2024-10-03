@@ -18,21 +18,15 @@ class GetMessagesCubit extends Cubit<GetMessagesState> {
   Future<dynamic> getMessages({required ChatMessage m}) async {
     typing.add(bot);
     allMassages.insert(0, m);
+    emit(GetMessagesMe());
     var result = await chatRepoImp.getMessages(message: m.text);
-    result.fold(
-      (failure) {
-        emit(GetMessagesFailure(failure.errMessage));
-      },
-      (messages) {
         ChatMessage m1 = ChatMessage(
         user: bot,
         createdAt: DateTime.now(),
-        text: messages["candidates"][0]["content"]["parts"][0]["text"],
-      );
+        text: result["candidates"][0]["content"]["parts"][0]["text"],
+       );
         allMassages.insert(0, m1);
         emit(GetMessagesSuccess());
-      },
-    );
-    typing.remove(bot);
+        typing.remove(bot);
   }
 }
