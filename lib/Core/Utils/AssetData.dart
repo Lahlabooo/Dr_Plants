@@ -1,6 +1,6 @@
 abstract class AssetData {
   static const splashImg = [
-    "assets/images/2.png",
+    "assets/images/Farmer-bro.png",
     "assets/images/3.png",
     "assets/images/4.png",
   ];
