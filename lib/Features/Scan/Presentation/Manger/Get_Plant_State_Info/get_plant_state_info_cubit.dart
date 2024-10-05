@@ -10,28 +10,16 @@ class GetPlantStateInfoCubit extends Cubit<GetPlantStateInfoState> {
   GetPlantStateInfoCubit(this.scanRepoImpl) : super(GetPlantStateInfoInitial());
   final ScanRepoImpl scanRepoImpl;
 
-  var index =  0;
   Future<void> getPlantState({required File img}) async {
-
     emit(GetPlantStateInfoLoading());
 
     var result = await scanRepoImpl.getPlantStateINfo(image: img);
     result.fold(
       (failure) {
-        if(index==0){
-          emit(GetPlantStateInfoSuccess(plantModel: PlantStateInfoModel.fromJson({'plant':'Tomato','status':'Healthy','disease':'Non-disease'})));
-          index++;
-        }else if(index == 1){
-          emit(GetPlantStateInfoSuccess(plantModel: PlantStateInfoModel.fromJson({'plant':'Tomato','status':'Infected','disease':'Early_blight'})));
-          index++;
-        }else if(index == 2){
-          emit(GetPlantStateInfoSuccess(plantModel: PlantStateInfoModel.fromJson({'plant':'Corn_(maize)','status':'Infected','disease':'Common_rust_'})));
-          index=0;
-        }
-
+        emit(GetPlantStateInfoFailure(failure.errMessage));
       },
       (data) {
-       var plantData = PlantStateInfoModel.fromJson(data);
+        var plantData = PlantStateInfoModel.fromJson(data);
         emit(GetPlantStateInfoSuccess(plantModel: plantData));
       },
     );
