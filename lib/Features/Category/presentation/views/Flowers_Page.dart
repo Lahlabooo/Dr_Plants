@@ -9,12 +9,12 @@ class FlowerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-    body: Padding(
-      padding: EdgeInsets.symmetric(vertical: 50.0),
-      child: BackgroundApp(
-        bodyWidget: CategoriesBody(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: 50.0),
+        child: BackgroundApp(
+          bodyWidget: CategoriesBody(),
+        ),
       ),
-    ),
-    );;
+    );
   }
 }
